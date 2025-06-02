@@ -1,5 +1,6 @@
 package com.proyectoYT.FullSpring;
 
+import com.proyectoYT.FullSpring.models.Libro;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
@@ -27,10 +28,8 @@ public class Rutas {
     }
 
     @PostMapping("/libro")
-    String guardarLibro(@RequestBody Map<String, Object> libro) {
-        libro.keySet().forEach(llave -> {
-            logger.debug("llave {} valor {}", llave, libro.get(llave));
-        });
+    String guardarLibro(@RequestBody Libro libro) {
+        logger.debug("nombre {} editorial {}", libro.nombre, libro.editorial);
 
         return "libro guardado";
     }
