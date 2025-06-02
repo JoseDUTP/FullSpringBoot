@@ -1,3 +1,5 @@
 logging:
   level:
     com.proyectoYT.FullSpring: DEBUG
+
+server.error.include-message: always
